@@ -1,56 +1,80 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./Develop/utils/generateMarkdown');
+// const writeFileAsync = util.promisify(fs.writeFile)=-0
+
 const promptUser = () => {
     return inquirer.prompt([
-        
+
         {
-            type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            type: "input",
+            name: "title",
+            message: "What is the project title?",
         },
         {
-            type: 'input',
-            name: 'project',
-            message: 'Enter the name of your Project:'
+            type: "input",
+            name: "description",
+            message: "Write a brief description of your project: "
         },
         {
-            type: 'input',
-            name: 'description',
-            message: 'Please provide description of Project:'
+            type: "input",
+            name: "installation",
+            message: "Describe the installation process if any: ",
         },
         {
-            type: 'input',
-            name: 'github',
-            message: 'Please enter Github usernamew:'
+            type: "input",
+            name: "usage",
+            message: "What is this project usage for?"
         },
         {
-            type: 'checkbox',
-            name: 'languages',
-            message: 'What did you build this project with? (check all that appy)',
-            choices: ['Javascript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+            type: "list",
+            name: "license",
+            message: "Chose the appropriate license for this project: ",
+            choices: [
+                "Apache",
+                "Academic",
+                "GNU",
+                "ISC",
+                "MIT",
+                "Mozilla",
+                "Open"
+            ]
         },
         {
-            type: 'input',
-            name: 'link',
-            message: 'Enter the Github link to your project. (Required)'
+            type: "input",
+            name: "contribution",
+            message: "Who are the contributors of this projects?"
         },
         {
-            type: 'input',
-            name: 'usage',
-            message: 'Provide usage for application'
+            type: "input",
+            name: "test",
+            message: "Is there a test included?"
+        },
+        {
+            type: "input",
+            name: "questions",
+            message: "What do I do if I have an issue? "
+        },
+        {
+            type: "input",
+            name: "username",
+            message: "Please enter your GitHub username: "
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "Please enter your email: "
         }
     ]);
-    console.log(promptUser);
 };
-// TODO: Create an array of questions for user input
-// const questions = [];
+const data = promptUser;
+promptUser()
+    .then(data => {
+        const pageMd = generateMarkdown(data);
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
-promptUser();
+fs.writeFile('./readme.md', pageMd, err => {
+    if(err) throw err;
+    console.log('Portfolio complete! Check out readme.md to see the output');
+});
+});
