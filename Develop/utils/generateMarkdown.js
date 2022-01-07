@@ -1,45 +1,38 @@
-
-// TODO: Create a function to generate markdown for README
+// template for promtUser() input to generate Readme file
 function generateMarkdown(promptUser) {
   return `
-  # ${promptUser.title}
-
-  # Table of Content
-  -[description](#description)
-  -[installation](#installation)
-  -[usage](#usage)
-  -[license](#license)
-  -[contribution](#contribution)
-  -[test](#test)
-  -[github](#github)
-  -[profile](#profile)
+  <h1 align="center">${promptUser.title} </h1>
   
-  ${promptUser.github}
-  ##github:
-  
-      ${promptUser.description}
-  ##description:
-  
-      ${promptUser.installation}
-  ##installation:
-  
-      ${promptUser.usage}
-  ##usage:
-  
-      ${promptUser.license}
-  ##licenses:
-  
-      ${promptUser.contribution}
-  ##contribution:
-  
-      ${promptUser.test}
-  ##test:
-  
-      ${promptUser.email}
-  ##email:
-  
-      ${promptUser.username}
-  ##profile:
+![badge](https://img.shields.io/badge/license-${promptUser.license}-brightgreen)<br />
+## Description
+ ${promptUser.description}
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+## Installation
+ ${promptUser.installation}
+## Usage
+💻 ${promptUser.usage}
+## License
+![badge](https://img.shields.io/badge/license-${promptUser.license}-brightgreen)
+<br />
+This application is covered by the ${promptUser.license} license. 
+## Contributing
+ ${promptUser.contributing}
+## Tests
+✏️ ${promptUser.tests}
+## Questions
+ ${promptUser.questions}<br />
+<br />
+ My GitHub: [${promptUser.username}](https://github.com/${promptUser.username})<br />
+<br />
+✉️ Email me with any questions: ${promptUser.email}<br /><br />
+_This README was generated with [README-generator](https://github.com/jpd61/README-generator)
   `;
 }
 

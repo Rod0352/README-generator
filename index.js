@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// require 'Inquirer' module
 const inquirer = require('inquirer');
 const fs = require('fs');
+// link input to template
 const generateMarkdown = require('./Develop/utils/generateMarkdown');
-// const writeFileAsync = util.promisify(fs.writeFile)=-0
-
+// prompt user for readme input
 const promptUser = () => {
     return inquirer.prompt([
 
@@ -68,7 +68,7 @@ const promptUser = () => {
         }
     ]);
 };
-const data = promptUser;
+// const data = promptUser;
 promptUser()
     .then(data => {
         const pageMd = generateMarkdown(data);
