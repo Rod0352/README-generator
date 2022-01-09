@@ -11,28 +11,28 @@ function generateMarkdown(promptUser) {
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
+- [contribution](#contribution)
+- [Test](#test)
 - [Questions](#questions)
 ## Installation
  ${promptUser.installation}
 ## Usage
-💻 ${promptUser.usage}
+ ${promptUser.usage}
 ## License
 ![badge](https://img.shields.io/badge/license-${promptUser.license}-brightgreen)
 <br />
 This application is covered by the ${promptUser.license} license. 
-## Contributing
- ${promptUser.contributing}
-## Tests
-✏️ ${promptUser.tests}
+## contribution
+ ${promptUser.contribution}
+## Test
+${promptUser.test}
 ## Questions
  ${promptUser.questions}<br />
 <br />
  My GitHub: [${promptUser.username}](https://github.com/${promptUser.username})<br />
 <br />
-✉️ Email me with any questions: ${promptUser.email}<br /><br />
-_This README was generated with [README-generator](https://github.com/jpd61/README-generator)
+ Email me with any questions: ${promptUser.email}<br /><br />
+This README was generated with [README-generator](https://github.com/Rod0352/README-generator)
   `;
 }
 

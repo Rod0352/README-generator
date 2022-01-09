@@ -25,7 +25,7 @@ const promptUser = () => {
         {
             type: "input",
             name: "usage",
-            message: "What is this project usage for?"
+            message: "How do you use this app?"
         },
         {
             type: "list",
@@ -68,13 +68,12 @@ const promptUser = () => {
         }
     ]);
 };
-// const data = promptUser;
 promptUser()
     .then(data => {
         const pageMd = generateMarkdown(data);
 
-fs.writeFile('./readme.md', pageMd, err => {
-    if(err) throw err;
-    console.log('Portfolio complete! Check out readme.md to see the output');
-});
-});
+        fs.writeFile('./dist/Readme.md', pageMd, err => {
+            if (err) throw err;
+            console.log('ReadMe complete! Check out readme.md to see the output');
+        });
+    });
