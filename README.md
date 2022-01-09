@@ -1,6 +1,10 @@
   <h1 align="center">README-generator </h1>
-  
+
+
+
 ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br />
+
+Link for walk-through video:https://watch.screencastify.com/v/kbFkOyMrnBTVhCG3mhFh
 ## Description
  Using Node.js, create a readme file through answering user prompts in your terminal.
 ## Table of Contents
