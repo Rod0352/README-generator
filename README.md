@@ -16,9 +16,9 @@ Link for walk-through video:https://watch.screencastify.com/v/kbFkOyMrnBTVhCG3mh
 - [Test](#test)
 - [Questions](#questions)
 ## Installation
- npm init &  npm install inquirer
+ npm i || npm install
 ## Usage
- Open terminal. Run "node index"
+  run command: "node index"
 ## License
 ![badge](https://img.shields.io/badge/license-MIT-brightgreen)
 <br />
